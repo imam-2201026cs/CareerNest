@@ -20,7 +20,11 @@ connectDB()
 await connectCloudinary()
 
 // Middlewares
-app.use(cors())
+app.use(cors({
+  origin: 'https://career-nest-client-wheat.vercel.app/', // Replace with your frontend domain
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
+}));
 app.use(express.json())
 app.use(clerkMiddleware())
 
