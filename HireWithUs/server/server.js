@@ -21,7 +21,7 @@ await connectCloudinary()
 
 // Middlewares
 app.use(cors({
-  origin: 'https://career-nest-client-wheat.vercel.app/', // Replace with your frontend domain
+  origin: 'https://career-nest-client-wheat.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
