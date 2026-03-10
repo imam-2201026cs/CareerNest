@@ -22,9 +22,13 @@ await connectCloudinary()
 // Middlewares
 app.use(cors({
   origin: 'https://career-nest-client-wheat.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
 }));
+
+// Ensure preflight requests are handled
+app.options('*', cors());
 app.use(express.json())
 app.use(clerkMiddleware())
 
